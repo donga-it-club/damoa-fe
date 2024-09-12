@@ -17,8 +17,7 @@
     ],
     "*.{js,jsx,svg,md,html,json}": [
       "prettier --write"
-    ],
-    "*.js": "eslint --cache --fix"
+    ]
   },
   "dependencies": {
     "antd": "^5.20.6",
