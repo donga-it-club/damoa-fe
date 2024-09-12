@@ -2,12 +2,22 @@
   "name": "damoa-fe",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{js,jsx,svg,md,html,json}": [
+      "prettier --write"
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "dependencies": {
     "antd": "^5.20.6",

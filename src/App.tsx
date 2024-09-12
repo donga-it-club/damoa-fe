@@ -1,26 +1,27 @@
-import { ConfigProvider } from 'antd';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { ConfigProvider } from 'antd';
 import HomePage from './pages/page';
-
+import Layout from '@/components/layout/Layout';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <></>,
+    element: <Layout />,
     children: [
       {
         index: true,
-        element: <HomePage/>
-      }
-    ]
-  }
-])
-
+        element: <HomePage />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return <ConfigProvider>      
+  return (
+    <ConfigProvider>
       <RouterProvider router={router} />
-  </ConfigProvider>;
+    </ConfigProvider>
+  );
 }
 
 export default App;

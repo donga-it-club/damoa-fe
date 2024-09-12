@@ -1,8 +1,6 @@
-
+import * as S from '@/styles/layouts/Header.style';
 const PageHeaders = () => {
-  return (
-    <div>PageHeaders</div>
-  )
-}
+  return <S.Container>PageHeaders</S.Container>;
+};
 
-export default PageHeaders
+export default PageHeaders;
