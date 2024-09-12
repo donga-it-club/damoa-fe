@@ -4,7 +4,7 @@ import PageHeaders from './PageHeaders';
 const Layout = () => {
   return (
     <>
-      <PageHeaderdd />
+      <PageHeaders />
       <main>
         <Outlet />
       </main>
