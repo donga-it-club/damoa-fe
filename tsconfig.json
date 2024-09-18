@@ -14,7 +14,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "types": ["vite/client"],
+    "types": ["vite/client", "./@types/emotion.d.ts"],
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,

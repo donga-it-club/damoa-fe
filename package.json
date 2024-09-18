@@ -20,9 +20,13 @@
     ]
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "antd": "^5.20.6",
     "axios": "^1.7.4",
     "dayjs": "^1.11.13",
+    "framer-motion": "^11.5.4",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
