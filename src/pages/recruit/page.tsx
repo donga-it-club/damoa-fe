@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button, HStack } from '@chakra-ui/react';
 import Title from '@/components/Title';
+import ContentsList from '@/components/recruit/ContentsList';
 import SearchContents from '@/components/recruit/SearchContents';
 
 const RecruitPage = () => {
@@ -21,6 +22,7 @@ const RecruitPage = () => {
         </Button>
       </HStack>
       <SearchContents />
+      <ContentsList />
     </>
   );
 };
