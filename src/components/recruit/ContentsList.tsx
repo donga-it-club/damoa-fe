@@ -3,13 +3,17 @@ import { FaRegCommentAlt } from 'react-icons/fa';
 import { IoEyeOutline } from 'react-icons/io5';
 import { Badge, Flex, Heading, HStack, Text } from '@chakra-ui/react';
 import styled from 'styled-components';
-import { MockRecruitContents } from '@/api/__mock__/contents';
+import { ContentType } from '@/api/__mock__/contents';
 
-const ContentsList = () => {
+interface ContentsListProps {
+  contents: ContentType[];
+}
+
+const ContentsList: React.FC<ContentsListProps> = ({ contents }) => {
   return (
     <>
-      {MockRecruitContents.map(value => (
-        <Flex flexDirection="column" gap={5} my={10}>
+      {contents.map(value => (
+        <Flex key={value.id} flexDirection="column" gap={5} my={10}>
           <HStack>
             <Badge variant="subtle" colorScheme="brand" color="black" fontSize={15}>
               {value.category}
