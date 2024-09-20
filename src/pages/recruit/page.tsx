@@ -26,6 +26,8 @@ const RecruitPage = () => {
           colorScheme="brand"
           variant={filterCategory === 'ALL' ? 'solid' : 'ghost'}
           onClick={() => setFilterCategory('ALL')}
+          _hover={{ transform: 'scale(1.05)', boxShadow: 'lg' }} // hover 시 확대 효과와 그림자 추가
+          _active={{ transform: 'scale(0.95)' }} // active 시 클릭 효과
         >
           전체
         </Button>
@@ -33,6 +35,8 @@ const RecruitPage = () => {
           colorScheme="brand"
           variant={filterCategory === ContentsCategoryType.PROJECT ? 'solid' : 'ghost'}
           onClick={() => setFilterCategory(ContentsCategoryType.PROJECT)}
+          _hover={{ transform: 'scale(1.05)', boxShadow: 'lg' }}
+          _active={{ transform: 'scale(0.95)' }}
         >
           프로젝트
         </Button>
@@ -40,6 +44,8 @@ const RecruitPage = () => {
           colorScheme="brand"
           variant={filterCategory === ContentsCategoryType.STUDY ? 'solid' : 'ghost'}
           onClick={() => setFilterCategory(ContentsCategoryType.STUDY)}
+          _hover={{ transform: 'scale(1.05)', boxShadow: 'lg' }}
+          _active={{ transform: 'scale(0.95)' }}
         >
           스터디
         </Button>

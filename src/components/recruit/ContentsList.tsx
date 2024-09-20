@@ -13,7 +13,16 @@ const ContentsList: React.FC<ContentsListProps> = ({ contents }) => {
   return (
     <>
       {contents.map(value => (
-        <Flex key={value.id} flexDirection="column" gap={5} my={10}>
+        <Flex
+          key={value.id}
+          flexDirection="column"
+          gap={5}
+          my={10}
+          p={5} // padding 추가
+          borderRadius="md" // 모서리 둥글게
+          transition="all 0.2s ease-in-out" // 전환 애니메이션 추가
+          _hover={{ transform: 'translateY(-5px)', boxShadow: 'lg' }}
+        >
           <HStack>
             <Badge variant="subtle" colorScheme="brand" color="black" fontSize={15}>
               {value.category}
