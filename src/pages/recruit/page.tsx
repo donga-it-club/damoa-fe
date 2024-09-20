@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Button, HStack } from '@chakra-ui/react';
+import { Button, Flex, HStack, Spacer } from '@chakra-ui/react';
 import Title from '@/components/Title';
+import WriteButton from '@/components/WriteButton';
+import ChangeCategory from '@/components/changeUnderline';
 import ContentsList from '@/components/recruit/ContentsList';
 import SearchContents from '@/components/recruit/SearchContents';
 
@@ -22,6 +24,11 @@ const RecruitPage = () => {
         </Button>
       </HStack>
       <SearchContents />
+      <Flex mt={5} borderBottom="1px" borderColor="gray.200">
+        <ChangeCategory />
+        <Spacer />
+        <WriteButton />
+      </Flex>
       <ContentsList />
     </>
   );
