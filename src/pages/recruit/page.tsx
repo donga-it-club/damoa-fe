@@ -3,6 +3,8 @@ import { Button, HStack } from '@chakra-ui/react';
 import { ContentsCategoryType, TContentsType } from '@/api/@asConst';
 import { MockRecruitContents } from '@/api/__mock__/contents';
 import Title from '@/components/Title';
+import WriteButton from '@/components/WriteButton';
+import ChangeCategory from '@/components/changeUnderline';
 import ContentsList from '@/components/recruit/ContentsList';
 import SearchContents from '@/components/recruit/SearchContents';
 import { CONTENTS_CATEGORY_LABEL } from '@/constants/label';
