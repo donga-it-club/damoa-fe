@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Button, Flex, HStack, Spacer } from '@chakra-ui/react';
+import ChangeCategory from '@/components/ChangeUnderline';
 import Title from '@/components/Title';
 import WriteButton from '@/components/WriteButton';
-import ChangeCategory from '@/components/changeUnderline';
 import ContentsList from '@/components/recruit/ContentsList';
 import SearchContents from '@/components/recruit/SearchContents';
 
