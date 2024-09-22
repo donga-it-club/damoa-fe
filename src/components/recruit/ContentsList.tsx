@@ -1,19 +1,50 @@
+import { useState } from 'react';
 import { CiBookmark, CiCalendar } from 'react-icons/ci';
 import { FaRegCommentAlt } from 'react-icons/fa';
 import { IoEyeOutline } from 'react-icons/io5';
-import { Badge, Flex, Heading, HStack, Text } from '@chakra-ui/react';
+import { Badge, Flex, Heading, HStack, Spacer, Tab, TabList, Tabs, Text } from '@chakra-ui/react';
 import styled from 'styled-components';
+import WriteButton from '../WriteButton';
+import { ContentsActivityType, TContentsActivityType } from '@/api/@asConst';
 import { ContentType } from '@/api/__mock__/contents';
-import { CONTENTS_CATEGORY_LABEL } from '@/constants/label';
+import { CONTENTS_ACTIVITY_LABELS, CONTENTS_CATEGORY_LABEL } from '@/constants/label';
 
 interface ContentsListProps {
   contents: ContentType[];
 }
 
 const ContentsList: React.FC<ContentsListProps> = ({ contents }) => {
+  const [activity, setActivity] = useState<TContentsActivityType[keyof TContentsActivityType]>(
+    ContentsActivityType.ALL,
+  );
+  const mappedActivities = Object.values(ContentsActivityType);
+
+  const handleClick = (value: keyof TContentsActivityType) => {
+    setActivity(value);
+  };
+
+  const filteredActivityContents = contents.filter(value => {
+    if (activity === ContentsActivityType.ALL) return true;
+    return activity === value.isActivated;
+  });
   return (
     <>
-      {contents.map(value => (
+      <Flex mt={5} borderBottom="1px" borderColor="gray.200">
+        <Flex>
+          <Tabs>
+            <TabList>
+              {mappedActivities.map(value => (
+                <Tab title={activity} value={value} onClick={() => handleClick(value)} pb={5} px={5}>
+                  {CONTENTS_ACTIVITY_LABELS[value]}
+                </Tab>
+              ))}
+            </TabList>
+          </Tabs>
+        </Flex>
+        <Spacer />
+        <WriteButton />
+      </Flex>
+      {filteredActivityContents.map(value => (
         <Flex
           key={value.id}
           flexDirection="column"
@@ -29,7 +60,7 @@ const ContentsList: React.FC<ContentsListProps> = ({ contents }) => {
               {CONTENTS_CATEGORY_LABEL[value.category]}
             </Badge>
             <Badge variant="solid" colorScheme="brand" fontSize={15}>
-              {value.isActived === true ? '모집중' : '모집 완료'}
+              {CONTENTS_ACTIVITY_LABELS[value.isActivated]}
             </Badge>
           </HStack>
           <Heading size="md">{value.title}</Heading>
