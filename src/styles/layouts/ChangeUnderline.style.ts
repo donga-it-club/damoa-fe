@@ -11,9 +11,9 @@ export const PageButtonAll = styled.button`
   font-size: 17px;
 
   cursor: pointer;
-  font-weight: ${props => (props.title === '전체' ? 700 : '')};
-  color: ${props => (props.title === '전체' ? 'black' : 'rgba(0, 0, 0, 0.3)')};
-  border-bottom: ${props => (props.title === '전체' ? '2px solid black' : '')};
+  font-weight: ${props => (props.title === 'ALL' ? 700 : '')};
+  color: ${props => (props.title === 'ALL' ? 'black' : 'rgba(0, 0, 0, 0.3)')};
+  border-bottom: ${props => (props.title === 'ALL' ? '2px solid black' : '')};
 `;
 
 export const PageButtonIng = styled.button`
@@ -27,9 +27,9 @@ export const PageButtonIng = styled.button`
   font-size: 17px;
 
   cursor: pointer;
-  font-weight: ${props => (props.title === '모집중' ? 700 : '')};
-  color: ${props => (props.title === '모집중' ? 'black' : 'rgba(0, 0, 0, 0.3)')};
-  border-bottom: ${props => (props.title === '모집중' ? '2px solid black' : '')};
+  font-weight: ${props => (props.title === 'RecruitIng' ? 700 : '')};
+  color: ${props => (props.title === 'RecruitIng' ? 'black' : 'rgba(0, 0, 0, 0.3)')};
+  border-bottom: ${props => (props.title === 'RecruitIng' ? '2px solid black' : '')};
 `;
 
 export const PageButtonDone = styled.button`
@@ -43,7 +43,7 @@ export const PageButtonDone = styled.button`
   font-size: 17px;
 
   cursor: pointer;
-  font-weight: ${props => (props.title === '모집 완료' ? 700 : '')};
-  color: ${props => (props.title === '모집 완료' ? 'black' : 'rgba(0, 0, 0, 0.3)')};
-  border-bottom: ${props => (props.title === '모집 완료' ? '2px solid black' : '')};
+  font-weight: ${props => (props.title === 'RecruitDone' ? 700 : '')};
+  color: ${props => (props.title === 'RecruitDone' ? 'black' : 'rgba(0, 0, 0, 0.3)')};
+  border-bottom: ${props => (props.title === 'RecruitDone' ? '2px solid black' : '')};
 `;

@@ -3,7 +3,7 @@ import { Flex } from '@chakra-ui/react';
 import * as S from '@/styles/layouts/ChangeUnderline.style';
 
 const ChangeCategory = () => {
-  const [currentTab, setCurrentTab] = useState<string>();
+  const [currentTab, setCurrentTab] = useState<string>('ALL');
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setCurrentTab(event.currentTarget.value);

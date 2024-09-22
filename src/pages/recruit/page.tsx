@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Button, HStack } from '@chakra-ui/react';
 import { ContentsCategoryType, TContentsType } from '@/api/@asConst';
 import { MockRecruitContents } from '@/api/__mock__/contents';
+import { Button, Flex, HStack, Spacer } from '@chakra-ui/react';
+import ChangeCategory from '@/components/ChangeUnderline';
 import Title from '@/components/Title';
 import WriteButton from '@/components/WriteButton';
 import ContentsList from '@/components/recruit/ContentsList';
@@ -15,6 +16,17 @@ const RecruitPage = () => {
   const filteredContents = MockRecruitContents.filter(content => {
     if (filterCategory === ContentsCategoryType.ALL) return true;
     return content.category === filterCategory;
+  });
+  const [value, setValue] = useState<number>(1);
+  const [filterRecruit, setFilterRecruit] = useState<string>('ALL');
+
+  const FilterRecruit = MockRecruitContents.filter(content => {
+    if (filterRecruit === 'RecruitIng') {
+      return content.isActived === true;
+    } else if (filterRecruit === 'RecruitDone') {
+      return content.isActived === false;
+    }
+    return true;
   });
 
   return (
@@ -34,7 +46,12 @@ const RecruitPage = () => {
         ))}
       </HStack>
       <SearchContents />
-      <ContentsList contents={filteredContents} />
+      <Flex mt={5} borderBottom="1px" borderColor="gray.200">
+        {/* <ChangeCategory currentTab={filterRecruit} setCurrentTab={setFilterRecruit} /> */}
+        <Spacer />
+        <WriteButton />
+      </Flex>
+      <ContentsList contents={FilterRecruit} />
     </>
   );
 };
