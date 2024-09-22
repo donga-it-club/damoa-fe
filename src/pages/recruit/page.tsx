@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button, HStack } from '@chakra-ui/react';
-import { ContentsCategoryType, TContentsType } from '@/api/@asConst';
+import { ContentsCategoryType, TContentsCategoryType } from '@/api/@asConst';
 import { MockRecruitContents } from '@/api/__mock__/contents';
 import Title from '@/components/Title';
 import ContentsList from '@/components/recruit/ContentsList';
@@ -8,10 +8,12 @@ import SearchContents from '@/components/recruit/SearchContents';
 import { CONTENTS_CATEGORY_LABEL } from '@/constants/label';
 
 const RecruitPage = () => {
-  const [filterCategory, setFilterCategory] = useState<TContentsType[keyof TContentsType]>(ContentsCategoryType.ALL);
+  const [filterCategory, setFilterCategory] = useState<TContentsCategoryType[keyof TContentsCategoryType]>(
+    ContentsCategoryType.ALL,
+  );
   const mappedCategories = Object.values(ContentsCategoryType);
 
-  const filteredContents = MockRecruitContents.filter(content => {
+  const filteredCategoryContents = MockRecruitContents.filter(content => {
     if (filterCategory === ContentsCategoryType.ALL) return true;
     return content.category === filterCategory;
   });
@@ -33,7 +35,8 @@ const RecruitPage = () => {
         ))}
       </HStack>
       <SearchContents />
-      <ContentsList contents={filteredContents} />
+
+      <ContentsList contents={filteredCategoryContents} />
     </>
   );
 };

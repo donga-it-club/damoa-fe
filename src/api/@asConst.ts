@@ -4,4 +4,11 @@ export const ContentsCategoryType = {
   STUDY: 'STUDY',
 } as const;
 
-export type TContentsType = typeof ContentsCategoryType;
+export const ContentsActivityType = {
+  ALL: 'ALL',
+  RECRUITED: 'RECRUITED',
+  RECRUITED_DONE: 'RECRUITED_DONE',
+} as const;
+
+export type TContentsCategoryType = typeof ContentsCategoryType;
+export type TContentsActivityType = typeof ContentsActivityType;
