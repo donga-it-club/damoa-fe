@@ -3,16 +3,30 @@ import { FaRegCommentAlt } from 'react-icons/fa';
 import { IoEyeOutline } from 'react-icons/io5';
 import { Badge, Flex, Heading, HStack, Text } from '@chakra-ui/react';
 import styled from 'styled-components';
-import { MockRecruitContents } from '@/api/__mock__/contents';
+import { ContentType } from '@/api/__mock__/contents';
+import { CONTENTS_CATEGORY_LABEL } from '@/constants/label';
 
-const ContentsList = () => {
+interface ContentsListProps {
+  contents: ContentType[];
+}
+
+const ContentsList: React.FC<ContentsListProps> = ({ contents }) => {
   return (
     <>
-      {MockRecruitContents.map(value => (
-        <Flex flexDirection="column" gap={5} my={10}>
+      {contents.map(value => (
+        <Flex
+          key={value.id}
+          flexDirection="column"
+          gap={5}
+          my={10}
+          p={5}
+          borderRadius="md"
+          transition="all 0.2s ease-in-out"
+          _hover={{ transform: 'translateY(-5px)', boxShadow: 'lg' }}
+        >
           <HStack>
             <Badge variant="subtle" colorScheme="brand" color="black" fontSize={15}>
-              {value.category}
+              {CONTENTS_CATEGORY_LABEL[value.category]}
             </Badge>
             <Badge variant="solid" colorScheme="brand" fontSize={15}>
               {value.isActived === true ? '모집중' : '모집 완료'}

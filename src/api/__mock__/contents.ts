@@ -1,6 +1,6 @@
 import { ContentsCategoryType, TContentsType } from '../@asConst';
 
-interface ContentType {
+export interface ContentType {
   id: number;
   title: string;
   contents: string;
