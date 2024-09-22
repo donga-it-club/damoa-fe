@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button, Flex, HStack, Spacer } from '@chakra-ui/react';
+import { MockRecruitContents } from '@/api/__mock__/contents';
 import ChangeCategory from '@/components/ChangeUnderline';
 import Title from '@/components/Title';
 import WriteButton from '@/components/WriteButton';
@@ -8,6 +9,16 @@ import SearchContents from '@/components/recruit/SearchContents';
 
 const RecruitPage = () => {
   const [value, setValue] = useState<number>(1);
+  const [filterRecruit, setFilterRecruit] = useState<string>('ALL');
+
+  const FilterRecruit = MockRecruitContents.filter(content => {
+    if (filterRecruit === 'RecruitIng') {
+      return content.isActived === true;
+    } else if (filterRecruit === 'RecruitDone') {
+      return content.isActived === false;
+    }
+    return true;
+  });
 
   return (
     <>
@@ -25,11 +36,11 @@ const RecruitPage = () => {
       </HStack>
       <SearchContents />
       <Flex mt={5} borderBottom="1px" borderColor="gray.200">
-        <ChangeCategory />
+        <ChangeCategory currentTab={filterRecruit} setCurrentTab={setFilterRecruit} />
         <Spacer />
         <WriteButton />
       </Flex>
-      <ContentsList />
+      <ContentsList contents={FilterRecruit} />
     </>
   );
 };
