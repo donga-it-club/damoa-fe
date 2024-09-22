@@ -4,6 +4,7 @@ import { IoEyeOutline } from 'react-icons/io5';
 import { Badge, Flex, Heading, HStack, Text } from '@chakra-ui/react';
 import styled from 'styled-components';
 import { ContentType } from '@/api/__mock__/contents';
+import { CONTENTS_CATEGORY_LABEL } from '@/constants/label';
 
 interface ContentsListProps {
   contents: ContentType[];
@@ -18,14 +19,14 @@ const ContentsList: React.FC<ContentsListProps> = ({ contents }) => {
           flexDirection="column"
           gap={5}
           my={10}
-          p={5} // padding 추가
-          borderRadius="md" // 모서리 둥글게
-          transition="all 0.2s ease-in-out" // 전환 애니메이션 추가
+          p={5}
+          borderRadius="md"
+          transition="all 0.2s ease-in-out"
           _hover={{ transform: 'translateY(-5px)', boxShadow: 'lg' }}
         >
           <HStack>
             <Badge variant="subtle" colorScheme="brand" color="black" fontSize={15}>
-              {value.category}
+              {CONTENTS_CATEGORY_LABEL[value.category]}
             </Badge>
             <Badge variant="solid" colorScheme="brand" fontSize={15}>
               {value.isActived === true ? '모집중' : '모집 완료'}
