@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
+import CommunityPage from './pages/community/page';
 import HomePage from './pages/page';
 import RecruitPage from './pages/recruit/page';
 import theme from './styles/theme';
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: 'recruit',
         element: <RecruitPage />,
+      },
+      {
+        path: 'community',
+        element: <CommunityPage />,
       },
     ],
   },

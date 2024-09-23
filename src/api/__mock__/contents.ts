@@ -1,4 +1,4 @@
-import { ContentsActivityType, ContentsCategoryType, TContentsActivityType, TContentsCategoryType } from '../@asConst';
+import { ContentsCategoryType, ContentsActivityType, TContentsCategoryType, TContentsActivityType } from '../@asConst';
 
 export interface ContentType {
   id: number;
@@ -22,7 +22,7 @@ export const MockRecruitContents: ContentType[] = [
     contents:
       '안녕하세요. 저희는 채팅 기반의 커뮤니티 토론 앱(Flutter 사용)을 만들고 있습니다. 주요 기능은 실시간 채팅 기능과 웹 사이트 크롤링 기능이고, .....',
     category: ContentsCategoryType.PROJECT,
-    isActivated: ContentsActivityType.RECRUITED,
+    isActivated: ContentsActivityType.ACTIVITY_REVIEW,
     userId: 1,
     username: 'ddd',
     createdDate: '2024-04-18T13:59:52.739Z',
@@ -37,7 +37,7 @@ export const MockRecruitContents: ContentType[] = [
     contents:
       '안녕하세요. 저희는 채팅 기반의 커뮤니티 토론 앱(Flutter 사용)을 만들고 있습니다. 주요 기능은 실시간 채팅 기능과 웹 사이트 크롤링 기능이고, .....',
     category: ContentsCategoryType.PROJECT,
-    isActivated: ContentsActivityType.RECRUITED_DONE,
+    isActivated: ContentsActivityType.EMPLOYMENT_ESSAY,
     userId: 1,
     username: 'ddd',
     createdDate: '2024-04-18T13:59:52.739Z',
@@ -52,7 +52,7 @@ export const MockRecruitContents: ContentType[] = [
     contents:
       '안녕하세요. 저희는 채팅 기반의 커뮤니티 토론 앱(Flutter 사용)을 만들고 있습니다. 주요 기능은 실시간 채팅 기능과 웹 사이트 크롤링 기능이고, .....',
     category: ContentsCategoryType.STUDY,
-    isActivated: ContentsActivityType.RECRUITED_DONE,
+    isActivated: ContentsActivityType.FREE_BOARD,
     userId: 1,
     username: 'ddd',
     createdDate: '2024-04-18T13:59:52.739Z',
@@ -67,7 +67,7 @@ export const MockRecruitContents: ContentType[] = [
     contents:
       '안녕하세요. 저희는 채팅 기반의 커뮤니티 토론 앱(Flutter 사용)을 만들고 있습니다. 주요 기능은 실시간 채팅 기능과 웹 사이트 크롤링 기능이고, .....',
     category: ContentsCategoryType.STUDY,
-    isActivated: ContentsActivityType.RECRUITED,
+    isActivated: ContentsActivityType.JOB_POSTING,
     userId: 1,
     username: 'ddd',
     createdDate: '2024-04-18T13:59:52.739Z',

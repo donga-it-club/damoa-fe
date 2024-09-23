@@ -1,10 +1,15 @@
+import { FC } from 'react';
 import { CiSearch } from 'react-icons/ci';
 import { Button, Flex, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 
-const SearchContents = () => {
+interface Props {
+  boolean?: true;
+}
+
+const SearchContents: FC<Props> = ({ boolean }) => {
   return (
-    <Flex justifyContent="flex-end" gap={3} mt={5}>
-      <Flex>
+    <>
+      <Flex flexGrow={boolean ? 0 : 1}>
         <InputGroup>
           <InputLeftElement pointerEvents="none" color="gray.300" fontSize="1.2em">
             <CiSearch color="green.500" />
@@ -16,7 +21,7 @@ const SearchContents = () => {
         </InputGroup>
       </Flex>
       <Button colorScheme="brand">검색</Button>
-    </Flex>
+    </>
   );
 };
 

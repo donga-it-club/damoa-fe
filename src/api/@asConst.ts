@@ -5,9 +5,12 @@ export const ContentsCategoryType = {
 } as const;
 
 export const ContentsActivityType = {
-  ALL: 'ALL',
-  RECRUITED: 'RECRUITED',
-  RECRUITED_DONE: 'RECRUITED_DONE',
+  ACTIVITY_REVIEW: 'ACTIVITY_REVIEW',
+  EMPLOYMENT_ESSAY: 'EMPLOYMENT_ESSAY',
+  JOB_POSTING: 'JOB_POSTING',
+  KNOWLEDGE_SHARING: 'KNOWLEDGE_SHARING',
+  PROMOTION: 'PROMOTION',
+  FREE_BOARD: 'FREE_BOARD',
 } as const;
 
 export type TContentsCategoryType = typeof ContentsCategoryType;
