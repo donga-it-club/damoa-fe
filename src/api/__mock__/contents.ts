@@ -11,6 +11,7 @@ export interface ContentType {
   createdDate: string;
   deadline: string;
   Bookmark: number;
+  progress: boolean;
   view: number;
   comment: number;
 }
@@ -24,6 +25,7 @@ export const MockRecruitContents: ContentType[] = [
     category: ContentsCategoryType.PROJECT,
     isActivated: ContentsActivityType.ACTIVITY_REVIEW,
     userId: 1,
+    progress: true,
     username: 'ddd',
     createdDate: '2024-04-18T13:59:52.739Z',
     deadline: '2024-10-18T13:59:52.739Z',
@@ -39,6 +41,8 @@ export const MockRecruitContents: ContentType[] = [
     category: ContentsCategoryType.PROJECT,
     isActivated: ContentsActivityType.EMPLOYMENT_ESSAY,
     userId: 1,
+    progress: true,
+
     username: 'ddd',
     createdDate: '2024-04-18T13:59:52.739Z',
     deadline: '2024-10-18T13:59:52.739Z',
@@ -58,6 +62,8 @@ export const MockRecruitContents: ContentType[] = [
     createdDate: '2024-04-18T13:59:52.739Z',
     deadline: '2024-10-18T13:59:52.739Z',
     Bookmark: 1,
+    progress: false,
+
     view: 5,
     comment: 4,
   },
@@ -73,6 +79,7 @@ export const MockRecruitContents: ContentType[] = [
     createdDate: '2024-04-18T13:59:52.739Z',
     deadline: '2024-10-18T13:59:52.739Z',
     Bookmark: 1,
+    progress: false,
     view: 5,
     comment: 4,
   },

@@ -12,7 +12,10 @@ export const CONTENTS_CATEGORY_LABEL: Record<keyof TContentsCategoryType, string
 };
 
 export const CONTENTS_ACTIVITY_LABELS: Record<keyof TContentsActivityType, string> = {
-  [ContentsActivityType.ALL]: '전체',
-  [ContentsActivityType.RECRUITED]: '모집 중',
-  [ContentsActivityType.RECRUITED_DONE]: '모집 완료',
+  [ContentsActivityType.ACTIVITY_REVIEW]: '활동후기',
+  [ContentsActivityType.EMPLOYMENT_ESSAY]: '취업 수기',
+  [ContentsActivityType.JOB_POSTING]: '채용 공고',
+  [ContentsActivityType.KNOWLEDGE_SHARING]: '지식 공유',
+  [ContentsActivityType.PROMOTION]: '홍보',
+  [ContentsActivityType.FREE_BOARD]: '자유 게시판',
 };
